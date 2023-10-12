@@ -47,7 +47,7 @@ mysql -h [HBShostname] -u jharvard -p yourmariadbpassword
 ```
 ``` sh
 MariaDB [jharvard_name_of_db] > CREATE TABLE new_table (
-  ->CompanyID VARCHAR(20),
+  -> CompanyID VARCHAR(20),
   -> CompanyName TEXT,
   -> subcat1 TEXT
   -> );
@@ -63,7 +63,7 @@ Now you can load the csv file into MariaDB:
 ``` sh
 MariaDB [jharvard_name_of_db] > LOAD DATA LOCAL INFILE '/export/mdb_external/import/jharvard/name_of_your_csv_small.csv' INTO TABLE jharvard_name_of_db.new_table FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES; 
 ```
-You can run a few descriptives to ensure that the import was successful and to get to know your data. For example, checked how many unique firms you have
+You can run a few descriptives to ensure that the import was successful and to get to know your data. For example, check how many unique firms you have:
 
 ``` sh
 MariaDB [jharvard_name_of_db]> SELECT COUNT(DISTINCT CompanyID) AS num_firms FROM new_table; 
@@ -81,4 +81,4 @@ Databases must be indexed for efficient and fast retrieval and processing downst
 ``` sh
 MariaDB [jharvard_name_of_db]> CREATE INDEX idx_new_table ON new_table (CompanyID);
 ```
-Your table is ready for use! 
+Your table is now ready for use! 
