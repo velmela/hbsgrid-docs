@@ -75,6 +75,7 @@ You can also check the minimum and maximum ID numbers:
 MariaDB [jharvard_name_of_db]> SELECT MIN(CompanyID) AS min_CompanyID, MAX(CompanyID) AS max_CompanyID FROM new_table; 
 ```
 **Important**
+
 Databases must be indexed for efficient and fast retrieval and processing downstream. In our example case, if we anticipate querying or merging the data by CompanyID, the database should be indexed on this variable:
 
 ``` sh
